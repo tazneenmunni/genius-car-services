@@ -29,7 +29,6 @@ const Register = () => {
     }
     const handleRegister = async (event) => {
         event.preventDefault();
-        // console.log(event.target.email.value);
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
@@ -37,10 +36,7 @@ const Register = () => {
         await updateProfile({ displayName: name, });
         console.log('Updated profile');
         navigate("/home");
-        // const agree = event.target.terms.checked;
-        // if (agree) {
-        //     createUserWithEmailAndPassword(email, password)
-        // }
+
 
 
 
@@ -56,7 +52,6 @@ const Register = () => {
                 <input type="password" name="password" id="" placeholder='Password' required />
                 <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
                 <label className={`ps-2 ${agree ? '' : ''}`} htmlFor="terms">Accept Genius Car Terms and Conditions</label>
-                {/* <label className={agree ? 'ps-2 text-primary' : 'ps-2 text-danger'} htmlFor="terms">Accept Genius Car Terms and Conditions</label> */}
                 <input
                     disabled={!agree}
                     className='btn btn-primary d-block w-50 mx-auto mb-2 mt-2' type="submit"
